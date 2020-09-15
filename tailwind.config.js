@@ -20,6 +20,10 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor:['hover', 'focus', 'group-hover'],
+    textColor:['hover', 'focus', 'group-hover'],
+
+  },
   plugins: [],
 }
