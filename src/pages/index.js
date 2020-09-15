@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import {IconTwitterLogo, IconHome,
-   IconExplore, IconNotifications,
-    IconMessages, IconList, IconBookmarks, IconProfile, IconMore} from '../components/icons';
+import Sidebar from '../components/sidebar';
+import ComposeTweet from '../components/composeTweet';
+import {IconTwitterLogo, IconInstead} from '../components/icons';
 
 
 
@@ -9,112 +8,21 @@ export default function Home() {
   return (
     <div  className="bg-body text-white ">
 
-      <div  className=" grid grid-cols-3 mx-64 min-h-screen" style={{ gridTemplateColumns: '250px 1fr 250px' }} >
+      <div  className=" grid grid-cols-3 mx-20 min-h-screen" style={{ gridTemplateColumns: '250px 1fr 350px' }} >
         <nav>
           <div className="mt-4 mb-8 ml-3">
             <IconTwitterLogo className="text-4xl "/>
           </div>
-          <ul>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconHome className="group-hover:text-primary"/></span>
-                      <span className="ml-4 mr-2 text-base" >Home</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconExplore className="group-hover:text-primary"/></span>
-                    <span className="ml-4 mr-2 text-base" >Explore</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                    <span><IconNotifications  className="group-hover:text-primary" /></span>
-                    <span className="ml-4 mr-2 text-base" >Notifications</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconMessages  className="group-hover:text-primary" /></span>
-                      <span className="ml-4 mr-2 text-base" >Messages</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconBookmarks className="group-hover:text-primary"/></span>
-                      <span className="ml-4 mr-2 text-base" >Bookmarks</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconList  className="group-hover:text-primary"/></span>
-                      <span className="ml-4 mr-2 text-base" >Lists</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconProfile  className="group-hover:text-primary"/></span>
-                      <span className="ml-4 mr-2 text-base" >Profile</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="mb-3">
-              <Link href="/home">
-                <a className="font-bold group block">
-                  <span className="inline-block">
-                    <span className="flex items-center group-hover:bg-gray-900 px-4 py-2 rounded-full group-hover:text-primary">
-                      <span><IconMore  className="group-hover:text-primary"/></span>
-                      <span className="ml-4 mr-2 text-base" >More</span>
-                    </span>
-                  </span>
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <Sidebar/>
         </nav>
-        <main>
-          tweets
+        <main className="min-h-screen border-l border-r border-gray-900">
+          <header className="flex justify-between px-4 py-3 border-b border-gray-900">
+            <span>
+              home
+            </span>
+            <span><IconInstead className="text-1xl text-primary"/></span>
+          </header>
+          <ComposeTweet/>
         </main>
         <aside>
           links
